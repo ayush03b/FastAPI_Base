@@ -9,6 +9,9 @@ services:
     image: fastapi_app
     environment:
       - DATABASE_URL=postgresql://user:password@db:5432/mydatabase
+      - SECRET_KEY=devsecretchangeme
+      - ACCESS_TOKEN_EXPIRE_MINUTES=60
+      - ALGORITHM=HS256
     volumes:
       - ./:/app
     depends_on:
